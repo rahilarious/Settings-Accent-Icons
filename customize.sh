@@ -26,8 +26,9 @@ if [ $API -ge $MOMINSDK ]; then
           set_perm_recursive $MODPATH 0 0 0755 0644
           ui_print "";sleep 2;ui_print "$MOPRINT1"; sleep 2;ui_print "$MOPRINT2"; sleep 2;ui_print "$MOPRINT3"; sleep 2;ui_print "$MOPRINT4";sleep 1;ui_print "";ui_print '<><><><><><><><><><><><><><><><><><><><><>';ui_print ' Module by plethorahil (t.me/plethorahil) ';ui_print '<><><><><><><><><><><><><><><><><><><><><>';ui_print "";sleep 3
       else
-      ui_print "Couldn't find overlay path"
-      ui_print "Are you sure your device supports overlays?"
+      ui_print " Couldn't find overlay path "
+      ui_print " Are you sure your device supports overlays? "
+      ui_print " Contact me t.me/plethorahil to figure out "
       fi
 else
     ui_print "Sorry !!! Your device doesn't support this module"
