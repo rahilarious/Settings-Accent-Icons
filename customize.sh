@@ -11,6 +11,7 @@ MOPRINT4=" Aaaand painted... Done n dusted "
 
 ### actual script ###
 MOOVERLAYPATH="`cmd overlay dump | grep -o '\/.*apk$' | head -n 1 | sed -n 's/overlay\/.*apk$/overlay\//gip'`"
+MOWCHPARTITION=`echo $MOOVERLAYPATH | grep -o -i -e 'product' -e 'vendor'`
 
 if [ $API -ge $MOMINSDK ]; then
     if [ $MOOVERLAYPATH ]; then
@@ -18,7 +19,8 @@ if [ $API -ge $MOMINSDK ]; then
           unzip -o "$ZIPFILE" -x 'META-INF/*' -d $MODPATH >&2
 
           MOREALOVERLAYPATH=`readlink -f $MOOVERLAYPATH`
-          MOTARGETPATH=$MODPATH$MOREALOVERLAYPATH
+          MOTARGETPATH="$MODPATH/system/$MOWCHPARTITION/overlay"
+          ui_print " Overlays detected in $MOWCHPARTITION partition "
           ui_print " Placing apk into $MOREALOVERLAYPATH "
           [ -f $MODPATH/$MOAPKNAME ] && mkdir -p $MOTARGETPATH && mv $MODPATH/$MOAPKNAME $MOTARGETPATH/$MOAPKNAME
 
