@@ -7,11 +7,11 @@ Have accent colored icons in Settings app in Android Pie 9 or above (Android 10 
 
 In android 9 update it felt like stock android is losing its charm, its originality. iOS like recents, samsung like icons in settings, weird partition and mounting system making it harder to root.
 I immediately disliked icon color change which killed my minimalistic elegant android experience.
-This is just me trying to held onto. 
+This is just me trying to held onto.
 
 **Features**
-* Uses light theme accent color in Android 9
-* Uses accent color based on dark/light mode in Android 10 or above
+* Uses light theme accent color in Android 9 (`@android:color/accent_device_default_light`)
+* Uses accent color based on dark/light mode in Android 10 or above (`@android:color/accent_device_default`)
 
 **Requirements**
 1. Android 9 or up
