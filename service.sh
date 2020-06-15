@@ -1,4 +1,9 @@
 #!/system/bin/sh
 
-sleep 30;
-cmd overlay enable com.github.plethorahil.settingsaccenticons;
+MOPACKAGENAME="com.github.plethorahil.settingsaccenticons"
+MOTARGETPACKAGE="com.android.settings"
+
+sleep 30
+if [ ! `cmd overlay list $MOTARGETPACKAGE | grep "[x].*$MOPACKAGENAME"` ]; then
+  cmd overlay enable $MOPACKAGENAME
+fi
