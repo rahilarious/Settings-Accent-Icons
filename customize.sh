@@ -10,7 +10,7 @@ MOPRINT3=" Ooops forgot colors..brb xD "
 MOPRINT4=" Aaaand painted... Done n dusted "
 
 ### actual script ###
-MOOVERLAYPATH="`cmd overlay dump basecodepath | head -n 1 | sed -n 's/overlay\/.*apk$/overlay\//gip'`"
+MOOVERLAYPATH="`cmd overlay dump | grep -o '\/.*apk$' | head -n 1 | sed -n 's/overlay\/.*apk$/overlay\//gip'`"
 
 if [ $API -ge $MOMINSDK ]; then
     if [ $MOOVERLAYPATH ]; then
